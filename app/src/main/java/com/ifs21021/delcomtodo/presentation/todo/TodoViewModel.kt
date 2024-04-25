@@ -1,5 +1,8 @@
 package com.ifs21021.delcomtodo.presentation.todo
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.asLiveData
 import com.ifs21021.delcomtodo.data.local.entity.DelcomTodoEntity
 import com.ifs21021.delcomtodo.data.remote.MyResult
 import com.ifs21021.delcomtodo.data.remote.response.DataAddTodoResponse
@@ -8,9 +11,6 @@ import com.ifs21021.delcomtodo.data.remote.response.DelcomTodoResponse
 import com.ifs21021.delcomtodo.data.repository.LocalTodoRepository
 import com.ifs21021.delcomtodo.data.repository.TodoRepository
 import com.ifs21021.delcomtodo.presentation.ViewModelFactory
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.asLiveData
 import okhttp3.MultipartBody
 
 class TodoViewModel(
@@ -57,7 +57,6 @@ class TodoViewModel(
   fun getLocalTodo(todoId: Int): LiveData<DelcomTodoEntity?> {
     return localTodoRepository.get(todoId)
   }
-
 
   fun insertLocalTodo(todo: DelcomTodoEntity) {
     localTodoRepository.insert(todo)

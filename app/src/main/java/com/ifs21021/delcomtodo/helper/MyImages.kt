@@ -1,6 +1,5 @@
 package com.ifs21021.delcomtodo.helper
 
-import com.ifs21021.delcomtodo.BuildConfig
 import android.content.ContentValues
 import android.content.Context
 import android.graphics.Bitmap
@@ -12,6 +11,7 @@ import android.os.Environment
 import android.provider.MediaStore
 import androidx.core.content.FileProvider
 import androidx.exifinterface.media.ExifInterface
+import com.ifs21021.delcomtodo.BuildConfig
 import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.FileOutputStream

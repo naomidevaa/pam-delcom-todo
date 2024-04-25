@@ -1,13 +1,5 @@
 package com.ifs21021.delcomtodo.presentation.todo
 
-import com.ifs21021.delcomtodo.R
-import com.ifs21021.delcomtodo.data.local.entity.DelcomTodoEntity
-import com.ifs21021.delcomtodo.data.model.DelcomTodo
-import com.ifs21021.delcomtodo.data.remote.MyResult
-import com.ifs21021.delcomtodo.data.remote.response.TodoResponse
-import com.ifs21021.delcomtodo.databinding.ActivityTodoDetailBinding
-import com.ifs21021.delcomtodo.helper.Utils.Companion.observeOnce
-import com.ifs21021.delcomtodo.presentation.ViewModelFactory
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -17,6 +9,14 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
+import com.ifs21021.delcomtodo.R
+import com.ifs21021.delcomtodo.data.local.entity.DelcomTodoEntity
+import com.ifs21021.delcomtodo.data.model.DelcomTodo
+import com.ifs21021.delcomtodo.data.remote.MyResult
+import com.ifs21021.delcomtodo.data.remote.response.TodoResponse
+import com.ifs21021.delcomtodo.databinding.ActivityTodoDetailBinding
+import com.ifs21021.delcomtodo.helper.Utils.Companion.observeOnce
+import com.ifs21021.delcomtodo.presentation.ViewModelFactory
 
 class TodoDetailActivity : AppCompatActivity() {
   private lateinit var binding: ActivityTodoDetailBinding
@@ -240,14 +240,14 @@ class TodoDetailActivity : AppCompatActivity() {
   }
 
   private fun setFavorite(status: Boolean){
-      isFavorite = status
-      if(status){
-        binding.ivTodoDetailActionFavorite
-          .setImageResource(R.drawable.ic_favorite_24)
-      }else{
-        binding.ivTodoDetailActionFavorite
-          .setImageResource(R.drawable.ic_favorite_border_24)
-      }
+    isFavorite = status
+    if(status){
+      binding.ivTodoDetailActionFavorite
+        .setImageResource(R.drawable.ic_favorite_24)
+    }else{
+      binding.ivTodoDetailActionFavorite
+        .setImageResource(R.drawable.ic_favorite_border_24)
+    }
   }
 
   private fun observeDeleteTodo(todoId: Int) {

@@ -1,14 +1,5 @@
 package com.ifs21021.delcomtodo.presentation.todo
 
-import com.ifs21021.delcomtodo.R
-import com.ifs21021.delcomtodo.data.model.DelcomTodo
-import com.ifs21021.delcomtodo.data.remote.MyResult
-import com.ifs21021.delcomtodo.databinding.ActivityTodoManageBinding
-import com.ifs21021.delcomtodo.helper.Utils.Companion.observeOnce
-import com.ifs21021.delcomtodo.helper.getImageUri
-import com.ifs21021.delcomtodo.helper.reduceFileImage
-import com.ifs21021.delcomtodo.helper.uriToFile
-import com.ifs21021.delcomtodo.presentation.ViewModelFactory
 import android.content.Intent
 import android.net.Uri
 import android.os.Build
@@ -21,6 +12,15 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
+import com.ifs21021.delcomtodo.R
+import com.ifs21021.delcomtodo.data.model.DelcomTodo
+import com.ifs21021.delcomtodo.data.remote.MyResult
+import com.ifs21021.delcomtodo.databinding.ActivityTodoManageBinding
+import com.ifs21021.delcomtodo.helper.Utils.Companion.observeOnce
+import com.ifs21021.delcomtodo.helper.getImageUri
+import com.ifs21021.delcomtodo.helper.reduceFileImage
+import com.ifs21021.delcomtodo.helper.uriToFile
+import com.ifs21021.delcomtodo.presentation.ViewModelFactory
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
@@ -113,7 +113,6 @@ class TodoManageActivity : AppCompatActivity() {
             observeAddCoverTodo(result.data.todoId)
           } else {
             showLoading(false)
-
             val resultIntent = Intent()
             setResult(RESULT_CODE, resultIntent)
             finishAfterTransition()
@@ -176,7 +175,6 @@ class TodoManageActivity : AppCompatActivity() {
 
     }
   }
-
   private fun startGallery() {
     launcherGallery.launch(
       PickVisualMediaRequest(
@@ -241,7 +239,6 @@ class TodoManageActivity : AppCompatActivity() {
             observeAddCoverTodo(todoId)
           } else {
             showLoading(false)
-
             val resultIntent = Intent()
             setResult(RESULT_CODE, resultIntent)
             finishAfterTransition()
@@ -313,7 +310,6 @@ class TodoManageActivity : AppCompatActivity() {
       }
     }
   }
-
   private fun showLoading(isLoading: Boolean) {
     binding.pbTodoManage.visibility =
       if (isLoading) View.VISIBLE else View.GONE
